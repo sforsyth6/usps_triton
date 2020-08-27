@@ -1,5 +1,5 @@
 FROM nvcr.io/nvidia/tritonserver:20.03-py3
-COPY $PWD/odtk-triton-example-batch/odtk_libs /odtk_libs
+COPY $PWD/odtk_libs /odtk_libs
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/odtk_libs"
 RUN ldconfig
 CMD LD_PRELOAD=/odtk_libs/libretinanet.so trtserver --model-repository=/models
