@@ -1,0 +1,62 @@
+name: "retinanet_rn50fpn"
+platform: "onnxruntime_onnx"
+max_batch_size: 128
+input [
+  {
+    name: "input_1"
+    data_type: TYPE_FP32
+    dims: [ 3, 1280, 1280 ]
+  }
+]
+output [
+  {
+    name: "box_1"
+    data_type: TYPE_FP32
+    dims: [ 36, 160, 160 ]
+  },
+  {
+    name: "box_2"
+    data_type: TYPE_FP32
+    dims: [ 36 , 80, 80 ]
+  },
+  {
+    name: "box_3"
+    data_type: TYPE_FP32
+    dims: [ 36, 40, 40 ]
+  },
+  {
+    name: "box_4"
+    data_type: TYPE_FP32
+    dims: [ 36, 20, 20 ]
+  },
+  {
+    name: "box_5"
+    data_type: TYPE_FP32
+    dims: [ 36, 10, 10]
+  },
+  {
+    name: "score_1"
+    data_type: TYPE_FP32
+    dims: [ 720, 160, 160 ]
+  },
+  {
+    name: "score_2"
+    data_type: TYPE_FP32
+    dims: [ 720, 80, 80 ]
+  },
+  {
+    name: "score_3"
+    data_type: TYPE_FP32
+    dims: [ 720, 40, 40 ]
+  },
+  {
+    name: "score_4"
+    data_type: TYPE_FP32
+    dims: [ 720, 20, 20 ]
+  },
+  {
+    name: "score_5"
+    data_type: TYPE_FP32
+    dims: [ 720, 10, 10 ]
+  }
+]
